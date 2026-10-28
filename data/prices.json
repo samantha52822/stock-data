@@ -1,0 +1,198 @@
+{
+  "all_ok": false,
+  "errors": [],
+  "expected_tw_close_date": "2026-10-27",
+  "expected_us_close_date": "2026-10-27",
+  "generated_at_taipei": "2026-10-28 11:46:48",
+  "items": {
+    "0050": {
+      "change": -0.3,
+      "close": 106.6,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "元大台灣50",
+      "prev_close": 106.9,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
+    },
+    "00631L": {
+      "change": -0.01,
+      "close": 35.6,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "元大台灣50正2",
+      "prev_close": 35.61,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
+    },
+    "00981A": {
+      "change": -0.79,
+      "close": 27.4,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "主動統一台股增長",
+      "prev_close": 28.19,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
+    },
+    "1815": {
+      "change": -8.0,
+      "close": 131.0,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "富喬",
+      "prev_close": 139.0,
+      "source": "TPEx daily_close_quotes",
+      "status": "ok"
+    },
+    "2330": {
+      "change": 15.0,
+      "close": 2400.0,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "台積電",
+      "prev_close": 2385.0,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
+    },
+    "2441": {
+      "change": 1.0,
+      "close": 112.0,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "超豐",
+      "prev_close": 111.0,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
+    },
+    "3081": {
+      "change": 125.0,
+      "close": 2500.0,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "聯亞",
+      "prev_close": 2375.0,
+      "source": "TPEx daily_close_quotes",
+      "status": "ok"
+    },
+    "4989": {
+      "market": "TW",
+      "note": "櫃買中心資料中找不到此代號",
+      "source": "TPEx",
+      "status": "missing"
+    },
+    "6415": {
+      "change": 6.0,
+      "close": 478.0,
+      "data_date": "2026-10-27",
+      "market": "TW",
+      "name": "矽力*-KY",
+      "prev_close": 472.0,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
+    },
+    "ARM": {
+      "change": 3.25,
+      "change_pct": 1.46,
+      "close": 226.6,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 223.35,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "MRVL": {
+      "change": 9.79,
+      "change_pct": 4.19,
+      "close": 243.57,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 233.78,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "MU": {
+      "change": 25.06,
+      "change_pct": 2.77,
+      "close": 928.76,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 903.7,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "NOK": {
+      "change": 0.25,
+      "change_pct": 2.89,
+      "close": 8.89,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 8.64,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "NVDA": {
+      "change": 1.94,
+      "change_pct": 0.9,
+      "close": 217.94,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 216,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "QQQ": {
+      "change": 9.05,
+      "change_pct": 1.27,
+      "close": 721.25,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 712.2,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "SPCX": {
+      "change": 1.68,
+      "change_pct": 1.14,
+      "close": 148.58,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 146.9,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "SPY": {
+      "change": 4.29,
+      "change_pct": 0.56,
+      "close": 769.66,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 765.37,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "TSM": {
+      "change": 12.5,
+      "change_pct": 2.95,
+      "close": 436.87,
+      "data_date": "2026-10-27",
+      "market": "US",
+      "prev_close": 424.37,
+      "quote_time_ny": "2026-10-27 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    }
+  },
+  "not_ok_symbols": [
+    "4989"
+  ],
+  "note": "status=ok 才可當收盤價使用；其他狀態一律視為缺漏。未判斷國定假日，休市日會顯示 stale。"
+}
