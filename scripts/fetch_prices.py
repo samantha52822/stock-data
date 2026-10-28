@@ -191,13 +191,18 @@ def main():
     exp_tw, exp_us = expected_tw_date(now_tpe), expected_us_date(now_ny)
     items, errors = {}, []
 
-    for name, fn, arg in [("TWSE", fetch_twse, TW_LISTED), ("TPEx", fetch_tpex, TW_OTC)]:
+    # 台股：兩邊都查全部代號，哪邊找得到就用哪邊（避免上市／上櫃分類記錯）
+    tw_all = sorted(set(TW_LISTED + TW_OTC))
+    for name, fn in [("TWSE", fetch_twse), ("TPEx", fetch_tpex)]:
         try:
-            items.update(fn(arg, exp_tw))
+            res = fn(tw_all, exp_tw)
         except Exception as e:  # noqa: BLE001
             errors.append(f"{name}: {e}")
-            for c in arg:
-                items[c] = {"market": "TW", "status": "error", "note": str(e)[:200]}
+            res = {c: {"market": "TW", "status": "error", "note": str(e)[:200]} for c in tw_all}
+        for c, v in res.items():
+            old = items.get(c)
+            if old is None or (old.get("status") != "ok" and v.get("status") != "missing"):
+                items[c] = v
 
     key = os.environ.get("FINNHUB_KEY", "").strip()
     if key:
