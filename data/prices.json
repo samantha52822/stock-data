@@ -1,9 +1,9 @@
 {
-  "all_ok": false,
+  "all_ok": true,
   "errors": [],
   "expected_tw_close_date": "2026-10-27",
   "expected_us_close_date": "2026-10-27",
-  "generated_at_taipei": "2026-10-28 11:46:48",
+  "generated_at_taipei": "2026-10-28 11:53:21",
   "items": {
     "0050": {
       "change": -0.3,
@@ -76,10 +76,14 @@
       "status": "ok"
     },
     "4989": {
+      "change": -6.0,
+      "close": 65.0,
+      "data_date": "2026-10-27",
       "market": "TW",
-      "note": "櫃買中心資料中找不到此代號",
-      "source": "TPEx",
-      "status": "missing"
+      "name": "榮科",
+      "prev_close": 71.0,
+      "source": "TWSE OpenAPI STOCK_DAY_ALL",
+      "status": "ok"
     },
     "6415": {
       "change": 6.0,
@@ -191,8 +195,6 @@
       "status": "ok"
     }
   },
-  "not_ok_symbols": [
-    "4989"
-  ],
+  "not_ok_symbols": [],
   "note": "status=ok 才可當收盤價使用；其他狀態一律視為缺漏。未判斷國定假日，休市日會顯示 stale。"
 }
