@@ -3,8 +3,9 @@ name: fetch-prices
 on:
   schedule:
     # UTC 23:00 / 23:30（週日到週四）＝ 台北時間週一到週五 07:00 / 07:30
-    - cron: "0 23 * * 0-4"
-    - cron: "30 23 * * 0-4"
+    - cron: "17 21 * * 0-4"
+    - cron: "47 21 * * 0-4"
+    - cron: "17 22 * * 0-4"
   workflow_dispatch: {}
 
 permissions:
