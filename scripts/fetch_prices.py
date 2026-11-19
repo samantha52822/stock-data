@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""抓取台股、美股收盤價，輸出 data/prices.json。
+"""抓取台股、美股收盤價，輸出 data/prices.json、data/history.csv、data/weekly.json。
 
 只用 Python 標準函式庫，不需 pip install。
 台股：證交所 OpenAPI（上市／ETF）、櫃買中心（上櫃）。不需 key。
 美股：Finnhub /quote。需要環境變數 FINNHUB_KEY。
 
 重要原則：抓不到、日期不對、疑似盤後價的標的，一律標記 status，不得當成收盤價使用。
+history.csv 只記 status=ok 的收盤；weekly.json 由 history.csv 與證交所資料計算（週報用）。
 """
+import csv
 import json
 import os
 import sys
@@ -24,11 +26,19 @@ TAIPEI = ZoneInfo("Asia/Taipei") if ZoneInfo else timezone(timedelta(hours=8))
 NEW_YORK = ZoneInfo("America/New_York") if ZoneInfo else timezone(timedelta(hours=-4))
 
 # ---- 追蹤清單（只放公開行情代號，不放股數成本） ----
-TW_LISTED = ["0050", "00981A", "00631L", "2330", "2441", "6415"]   # 上市／ETF
-TW_OTC = ["1815", "3081", "4989"]                                   # 上櫃
-US_SYMBOLS = ["QQQ", "SPY", "MU", "MRVL", "NVDA", "ARM", "NOK", "SPCX", "TSM"]
+# 台股兩邊都會查，分類記錯也抓得到；新增或賣出持股時改這裡。
+TW_LISTED = ["0050", "00981A", "00631L", "2330", "2441", "6415", "4989"]   # 上市／ETF
+TW_OTC = ["1815", "3081"]                                                   # 上櫃
+US_HOLDINGS = ["QQQ", "SPY", "MU", "MRVL", "NVDA", "ARM", "NOK", "SPCX", "TSM"]
+US_SECTOR_ETFS = ["SMH", "XLK", "XLF", "XLU", "XLP", "XLE", "TLT", "GLD"]   # 週報類股／資金輪動用
+US_SYMBOLS = US_HOLDINGS + US_SECTOR_ETFS
 
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "prices.json")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+OUT_PATH = os.path.join(DATA_DIR, "prices.json")
+HISTORY_PATH = os.path.join(DATA_DIR, "history.csv")
+WEEKLY_PATH = os.path.join(DATA_DIR, "weekly.json")
+HISTORY_FIELDS = ["date", "symbol", "market", "close", "source"]
+WINDOW_3M = 63  # 近 3 個月約 63 個交易日
 UA = {"User-Agent": "Mozilla/5.0 (stock-data personal script)"}
 
 
@@ -185,6 +195,178 @@ def fetch_finnhub(symbols, exp_date, key):
     return out
 
 
+# ---------------- 歷史紀錄 ----------------
+def load_history():
+    rows = {}
+    path = os.path.abspath(HISTORY_PATH)
+    if os.path.exists(path):
+        with open(path, encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                rows[(r["date"], r["symbol"])] = r
+    return rows
+
+
+def save_history(rows):
+    path = os.path.abspath(HISTORY_PATH)
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=HISTORY_FIELDS)
+        w.writeheader()
+        for k in sorted(rows, key=lambda k: (k[1], k[0])):
+            w.writerow({x: rows[k].get(x, "") for x in HISTORY_FIELDS})
+
+
+def update_history(rows, items):
+    """只記 status=ok 的收盤，同一天同代號以最新一次為準。"""
+    for sym, v in items.items():
+        if v.get("status") == "ok" and v.get("close") is not None and v.get("data_date"):
+            rows[(v["data_date"], sym)] = {
+                "date": v["data_date"], "symbol": sym, "market": v.get("market", ""),
+                "close": v["close"], "source": v.get("source", ""),
+            }
+
+
+def pct(a, b):
+    return round((a - b) / b * 100, 2) if a is not None and b else None
+
+
+def series_stats(series, expected_date):
+    """series: [(date_iso, close)] 依日期排序。回傳本週／上週收盤、週漲跌、近 3 個月高點與回檔。"""
+    if not series:
+        return {"status": "no_history"}
+    last_d, last_c = series[-1]
+    d = datetime.strptime(last_d, "%Y-%m-%d").date()
+    monday = (d - timedelta(days=d.weekday())).isoformat()
+    prev = [x for x in series if x[0] < monday]
+    win = series[-WINDOW_3M:]
+    hi_d, hi_c = max(win, key=lambda x: (x[1], x[0]))
+    out = {
+        "latest_date": last_d, "latest_close": last_c,
+        "latest_is_expected": last_d == expected_date,
+        "prev_week_date": prev[-1][0] if prev else None,
+        "prev_week_close": prev[-1][1] if prev else None,
+        "week_change_pct": pct(last_c, prev[-1][1]) if prev else None,
+        "high_3m": hi_c, "high_3m_date": hi_d,
+        "drawdown_from_high_pct": pct(last_c, hi_c),
+        "history_days": len(win), "history_start": win[0][0],
+        "high_3m_complete": len(series) >= WINDOW_3M,
+    }
+    out["status"] = "ok" if out["latest_is_expected"] and prev else "incomplete"
+    return out
+
+
+# ---------------- 證交所：加權指數、成交金額、三大法人 ----------------
+def twse_rwd(path, **params):
+    params["response"] = "json"
+    data = http_json("https://www.twse.com.tw/rwd/zh/" + path + "?" + urllib.parse.urlencode(params))
+    if data.get("stat") != "OK":
+        raise RuntimeError(f"{path} {params}: {data.get('stat')}")
+    return data
+
+
+def fetch_taiex_months(end_date, months=4):
+    """回傳 [(date_iso, taiex, trade_value)]，涵蓋最近 months 個月。"""
+    out, y, m = {}, end_date.year, end_date.month
+    for _ in range(months):
+        data = twse_rwd("afterTrading/FMTQIK", date=f"{y:04d}{m:02d}01")
+        for r in data.get("data", []):
+            di = roc_to_iso(r[0])
+            if di:
+                out[di] = (to_float(r[4]), to_float(r[2]))
+        m -= 1
+        if m == 0:
+            y, m = y - 1, 12
+        time.sleep(1)
+    return sorted((d, v[0], v[1]) for d, v in out.items())
+
+
+INST_MAP = {
+    "foreign": ["外資及陸資(不含外資自營商)", "外資自營商"],
+    "trust": ["投信"],
+    "dealer": ["自營商(自行買賣)", "自營商(避險)"],
+    "total": ["合計"],
+}
+
+
+def fetch_institutional(day_iso):
+    data = twse_rwd("fund/BFI82U", type="day", dayDate=day_iso.replace("-", ""))
+    by = {r[0]: to_float(r[3]) or 0.0 for r in data.get("data", [])}
+    return {k: round(sum(by.get(n, 0.0) for n in names) / 1e8, 2) for k, names in INST_MAP.items()}
+
+
+def build_tw_market(exp_tw, errors):
+    out = {"note": "加權指數與成交金額來自證交所 FMTQIK；三大法人來自 BFI82U，單位億元（正＝買超）。"}
+    try:
+        rows = fetch_taiex_months(exp_tw)
+    except Exception as e:  # noqa: BLE001
+        errors.append(f"TWSE FMTQIK: {e}")
+        return {"status": "error", "note": str(e)[:200]}
+    series = [(d, c) for d, c, _ in rows if c is not None]
+    stats = series_stats(series, exp_tw.isoformat())
+    stats["high_3m_complete"] = len(series) >= WINDOW_3M
+    if stats.get("prev_week_date") and stats.get("latest_is_expected"):
+        stats["status"] = "ok"
+    out["taiex"] = stats
+    if not series:
+        return out
+    last_d = datetime.strptime(series[-1][0], "%Y-%m-%d").date()
+    monday = last_d - timedelta(days=last_d.weekday())
+    prev_monday = monday - timedelta(days=7)
+    this_week = [(d, c, v) for d, c, v in rows if d >= monday.isoformat()]
+    prev_week = [(d, c, v) for d, c, v in rows if prev_monday.isoformat() <= d < monday.isoformat()]
+    tv_this = sum(v for _, _, v in this_week if v)
+    tv_prev = sum(v for _, _, v in prev_week if v)
+    out["trade_value"] = {
+        "this_week_days": [d for d, _, _ in this_week],
+        "this_week_total_100m": round(tv_this / 1e8, 1),
+        "this_week_avg_100m": round(tv_this / 1e8 / len(this_week), 1) if this_week else None,
+        "prev_week_total_100m": round(tv_prev / 1e8, 1),
+        "prev_week_avg_100m": round(tv_prev / 1e8 / len(prev_week), 1) if prev_week else None,
+        "avg_change_pct": pct(tv_this / len(this_week), tv_prev / len(prev_week)) if this_week and prev_week else None,
+    }
+    daily, week_sum = {}, {k: 0.0 for k in INST_MAP}
+    for d, _, _ in this_week:
+        try:
+            daily[d] = fetch_institutional(d)
+            for k in INST_MAP:
+                week_sum[k] += daily[d][k]
+        except Exception as e:  # noqa: BLE001
+            daily[d] = {"status": "error", "note": str(e)[:200]}
+            errors.append(f"TWSE BFI82U {d}: {e}")
+        time.sleep(1)
+    out["institutional"] = {
+        "daily_100m": daily,
+        "week_total_100m": {k: round(v, 2) for k, v in week_sum.items()},
+        "complete": all("status" not in v for v in daily.values()),
+    }
+    return out
+
+
+def build_weekly(history, exp_tw, exp_us, now_tpe, tw_market):
+    by_sym = {}
+    for (d, sym), r in history.items():
+        by_sym.setdefault(sym, []).append((d, float(r["close"]), r.get("market", "")))
+    items = {}
+    for sym, rows in sorted(by_sym.items()):
+        rows.sort()
+        market = rows[-1][2]
+        exp = exp_tw if market == "TW" else exp_us
+        st = series_stats([(d, c) for d, c, _ in rows], exp.isoformat())
+        st["market"] = market
+        if sym in US_SECTOR_ETFS:
+            st["group"] = "sector_etf"
+        items[sym] = st
+    return {
+        "generated_at_taipei": now_tpe.strftime("%Y-%m-%d %H:%M:%S"),
+        "expected_tw_close_date": exp_tw.isoformat(),
+        "expected_us_close_date": exp_us.isoformat(),
+        "note": ("週漲跌＝最新收盤對上週最後一個交易日收盤。latest_is_expected=false 代表最新收盤不是預期日期，"
+                 "不可當本週收盤。high_3m 取最近 63 個交易日；high_3m_complete=false 代表歷史資料不足 63 天，"
+                 "高點需另行網頁核對。status=ok 才可直接使用。"),
+        "tw_market": tw_market,
+        "items": items,
+    }
+
+
 def main():
     now_utc = datetime.now(timezone.utc)
     now_tpe, now_ny = now_utc.astimezone(TAIPEI), now_utc.astimezone(NEW_YORK)
@@ -232,6 +414,22 @@ def main():
         json.dump(result, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")
     print(f"wrote {path}; not ok: {bad or 'none'}; errors: {errors or 'none'}")
+
+    # 歷史紀錄與週報資料（失敗不影響 prices.json）
+    try:
+        history = load_history()
+        update_history(history, items)
+        save_history(history)
+        week_errors = []
+        tw_market = build_tw_market(exp_tw, week_errors)
+        weekly = build_weekly(history, exp_tw, exp_us, now_tpe, tw_market)
+        weekly["errors"] = week_errors
+        with open(os.path.abspath(WEEKLY_PATH), "w", encoding="utf-8") as f:
+            json.dump(weekly, f, ensure_ascii=False, indent=2, sort_keys=True)
+            f.write("\n")
+        print(f"wrote weekly.json; history rows: {len(history)}; errors: {week_errors or 'none'}")
+    except Exception as e:  # noqa: BLE001
+        print(f"weekly build failed: {e}")
     return 0
 
 
