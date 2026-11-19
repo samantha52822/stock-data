@@ -3,7 +3,7 @@
   "errors": [],
   "expected_tw_close_date": "2026-11-18",
   "expected_us_close_date": "2026-11-18",
-  "generated_at_taipei": "2026-11-19 11:30:10",
+  "generated_at_taipei": "2026-11-19 11:43:01",
   "items": {
     "0050": {
       "change": 0.1,
@@ -106,6 +106,17 @@
       "source": "Finnhub quote",
       "status": "ok"
     },
+    "GLD": {
+      "change": -11.29,
+      "change_pct": -3.2,
+      "close": 341.19,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 352.48,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
     "MRVL": {
       "change": -3.2,
       "change_pct": -2.15,
@@ -161,6 +172,17 @@
       "source": "Finnhub quote",
       "status": "ok"
     },
+    "SMH": {
+      "change": -0.56,
+      "change_pct": -0.12,
+      "close": 459.54,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 460.1,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
     "SPCX": {
       "change": 1.8,
       "change_pct": 1.27,
@@ -183,6 +205,17 @@
       "source": "Finnhub quote",
       "status": "ok"
     },
+    "TLT": {
+      "change": 0.67,
+      "change_pct": 0.84,
+      "close": 80.22,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 79.55,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
     "TSM": {
       "change": 2.93,
       "change_pct": 0.81,
@@ -190,6 +223,61 @@
       "data_date": "2026-11-18",
       "market": "US",
       "prev_close": 359.69,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "XLE": {
+      "change": -2.07,
+      "change_pct": -3.27,
+      "close": 61.29,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 63.36,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "XLF": {
+      "change": -0.65,
+      "change_pct": -1.14,
+      "close": 56.42,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 57.07,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "XLK": {
+      "change": 0.55,
+      "change_pct": 0.34,
+      "close": 163.81,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 163.26,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "XLP": {
+      "change": -0.28,
+      "change_pct": -0.31,
+      "close": 91.18,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 91.46,
+      "quote_time_ny": "2026-11-18 16:00:00",
+      "source": "Finnhub quote",
+      "status": "ok"
+    },
+    "XLU": {
+      "change": 0.13,
+      "change_pct": 0.3,
+      "close": 43.55,
+      "data_date": "2026-11-18",
+      "market": "US",
+      "prev_close": 43.42,
       "quote_time_ny": "2026-11-18 16:00:00",
       "source": "Finnhub quote",
       "status": "ok"

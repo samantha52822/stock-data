@@ -169,6 +169,7 @@ date,symbol,market,close,source
 2026-11-16,ARM,US,175.05,Finnhub quote
 2026-11-17,ARM,US,183.39,Finnhub quote
 2026-11-18,ARM,US,182.76,Finnhub quote
+2026-11-18,GLD,US,341.19,Finnhub quote
 2026-10-27,MRVL,US,243.57,Finnhub quote
 2026-10-28,MRVL,US,251.65,Finnhub quote
 2026-10-29,MRVL,US,218.34,Finnhub quote
@@ -254,6 +255,7 @@ date,symbol,market,close,source
 2026-11-16,QQQ,US,661.75,Finnhub quote
 2026-11-17,QQQ,US,656.95,Finnhub quote
 2026-11-18,QQQ,US,659.51,Finnhub quote
+2026-11-18,SMH,US,459.54,Finnhub quote
 2026-10-27,SPCX,US,148.58,Finnhub quote
 2026-10-28,SPCX,US,145.23,Finnhub quote
 2026-10-29,SPCX,US,143.89,Finnhub quote
@@ -288,6 +290,7 @@ date,symbol,market,close,source
 2026-11-16,SPY,US,739.95,Finnhub quote
 2026-11-17,SPY,US,732.44,Finnhub quote
 2026-11-18,SPY,US,730.2,Finnhub quote
+2026-11-18,TLT,US,80.22,Finnhub quote
 2026-10-27,TSM,US,436.87,Finnhub quote
 2026-10-28,TSM,US,439.51,Finnhub quote
 2026-10-29,TSM,US,431.81,Finnhub quote
@@ -305,3 +308,8 @@ date,symbol,market,close,source
 2026-11-16,TSM,US,373.45,Finnhub quote
 2026-11-17,TSM,US,359.69,Finnhub quote
 2026-11-18,TSM,US,362.62,Finnhub quote
+2026-11-18,XLE,US,61.29,Finnhub quote
+2026-11-18,XLF,US,56.42,Finnhub quote
+2026-11-18,XLK,US,163.81,Finnhub quote
+2026-11-18,XLP,US,91.18,Finnhub quote
+2026-11-18,XLU,US,43.55,Finnhub quote
