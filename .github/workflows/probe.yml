@@ -1,0 +1,15 @@
+name: probe-twse
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in \
+            "https://openapi.twse.com.tw/v1/exchangeReport/FMTQIK" \
+            "https://openapi.twse.com.tw/v1/exchangeReport/MI_INDEX" \
+            "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20261118&response=json" \
+            "https://www.twse.com.tw/rwd/zh/fund/BFI82U?type=day&dayDate=20261118&response=json" \
+            "https://www.twse.com.tw/rwd/zh/fund/BFI82U?type=week&weekDate=20261113&response=json" \
+            "https://www.twse.com.tw/rwd/zh/afterTrading/FMTQIK?date=20260801&response=json" ; do
+            echo "=== $u"; curl -sS -m 30 -A "Mozilla/5.0" "$u" | head -c 1500; echo; done
