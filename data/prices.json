@@ -1,9 +1,9 @@
 {
-  "all_ok": true,
+  "all_ok": false,
   "errors": [],
-  "expected_tw_close_date": "2026-11-23",
+  "expected_tw_close_date": "2026-11-24",
   "expected_us_close_date": "2026-11-23",
-  "generated_at_taipei": "2026-11-24 14:21:26",
+  "generated_at_taipei": "2026-11-24 14:54:50",
   "items": {
     "0050": {
       "change": 2.55,
@@ -13,7 +13,7 @@
       "name": "元大台灣50",
       "prev_close": 84.45,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "00631L": {
       "change": 1.26,
@@ -23,7 +23,7 @@
       "name": "元大台灣50正2",
       "prev_close": 21.24,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "00981A": {
       "change": 1.46,
@@ -33,15 +33,15 @@
       "name": "主動統一台股增長",
       "prev_close": 18.58,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "1815": {
-      "change": 3.5,
-      "close": 102.5,
-      "data_date": "2026-11-23",
+      "change": 10.0,
+      "close": 112.5,
+      "data_date": "2026-11-24",
       "market": "TW",
       "name": "富喬",
-      "prev_close": 99.0,
+      "prev_close": 102.5,
       "source": "TPEx daily_close_quotes",
       "status": "ok"
     },
@@ -53,7 +53,7 @@
       "name": "台積電",
       "prev_close": 2000.0,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "2441": {
       "change": 7.2,
@@ -63,15 +63,15 @@
       "name": "超豐",
       "prev_close": 86.8,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "3081": {
-      "change": 25.0,
-      "close": 1390.0,
-      "data_date": "2026-11-23",
+      "change": 135.0,
+      "close": 1525.0,
+      "data_date": "2026-11-24",
       "market": "TW",
       "name": "聯亞",
-      "prev_close": 1365.0,
+      "prev_close": 1390.0,
       "source": "TPEx daily_close_quotes",
       "status": "ok"
     },
@@ -83,7 +83,7 @@
       "name": "榮科",
       "prev_close": 40.95,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "6415": {
       "change": 12.5,
@@ -93,7 +93,7 @@
       "name": "矽力*-KY",
       "prev_close": 283.5,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
-      "status": "ok"
+      "status": "stale"
     },
     "ARM": {
       "change": 24.47,
@@ -283,6 +283,14 @@
       "status": "ok"
     }
   },
-  "not_ok_symbols": [],
+  "not_ok_symbols": [
+    "0050",
+    "00631L",
+    "00981A",
+    "2330",
+    "2441",
+    "4989",
+    "6415"
+  ],
   "note": "status=ok 才可當收盤價使用；其他狀態一律視為缺漏。未判斷國定假日，休市日會顯示 stale。"
 }

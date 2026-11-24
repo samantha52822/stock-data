@@ -79,6 +79,7 @@ date,symbol,market,close,source
 2026-11-19,1815,TW,110.0,TPEx daily_close_quotes
 2026-11-20,1815,TW,99.0,TPEx daily_close_quotes
 2026-11-23,1815,TW,102.5,TPEx daily_close_quotes
+2026-11-24,1815,TW,112.5,TPEx daily_close_quotes
 2026-10-27,2330,TW,2400.0,TWSE OpenAPI STOCK_DAY_ALL
 2026-10-28,2330,TW,2425.0,TWSE OpenAPI STOCK_DAY_ALL
 2026-10-29,2330,TW,2415.0,TWSE OpenAPI STOCK_DAY_ALL
@@ -139,6 +140,7 @@ date,symbol,market,close,source
 2026-11-19,3081,TW,1515.0,TPEx daily_close_quotes
 2026-11-20,3081,TW,1365.0,TPEx daily_close_quotes
 2026-11-23,3081,TW,1390.0,TPEx daily_close_quotes
+2026-11-24,3081,TW,1525.0,TPEx daily_close_quotes
 2026-10-27,4989,TW,65.0,TWSE OpenAPI STOCK_DAY_ALL
 2026-10-28,4989,TW,66.6,TWSE OpenAPI STOCK_DAY_ALL
 2026-10-29,4989,TW,64.0,TWSE OpenAPI STOCK_DAY_ALL
