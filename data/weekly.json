@@ -1,152 +1,152 @@
 {
   "errors": [],
-  "expected_tw_close_date": "2026-11-25",
-  "expected_us_close_date": "2026-11-25",
-  "generated_at_taipei": "2026-11-26 12:54:42",
+  "expected_tw_close_date": "2026-11-26",
+  "expected_us_close_date": "2026-11-26",
+  "generated_at_taipei": "2026-11-27 06:43:57",
   "items": {
     "0050": {
-      "drawdown_from_high_pct": -16.89,
+      "drawdown_from_high_pct": -14.54,
       "high_3m": 108.65,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 90.3,
-      "latest_date": "2026-11-25",
+      "latest_close": 92.85,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 84.45,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 6.93
+      "week_change_pct": 9.95
     },
     "00631L": {
-      "drawdown_from_high_pct": -35.52,
+      "drawdown_from_high_pct": -30.86,
       "high_3m": 36.88,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 23.78,
-      "latest_date": "2026-11-25",
+      "latest_close": 25.5,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 21.24,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 11.96
+      "week_change_pct": 20.06
     },
     "00981A": {
-      "drawdown_from_high_pct": -28.34,
+      "drawdown_from_high_pct": -23.6,
       "high_3m": 28.65,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 20.53,
-      "latest_date": "2026-11-25",
+      "latest_close": 21.89,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 18.58,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 10.5
+      "week_change_pct": 17.81
     },
     "1815": {
-      "drawdown_from_high_pct": -29.51,
+      "drawdown_from_high_pct": -25.35,
       "high_3m": 144.0,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 101.5,
-      "latest_date": "2026-11-25",
+      "latest_close": 107.5,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 99.0,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 2.53
+      "week_change_pct": 8.59
     },
     "2330": {
-      "drawdown_from_high_pct": -11.34,
+      "drawdown_from_high_pct": -11.55,
       "high_3m": 2425.0,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 2150.0,
-      "latest_date": "2026-11-25",
+      "latest_close": 2145.0,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 2000.0,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 7.5
+      "week_change_pct": 7.25
     },
     "2441": {
-      "drawdown_from_high_pct": -20.09,
+      "drawdown_from_high_pct": -14.37,
       "high_3m": 115.5,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 92.3,
-      "latest_date": "2026-11-25",
+      "latest_close": 98.9,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 86.8,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 6.34
+      "week_change_pct": 13.94
     },
     "3081": {
-      "drawdown_from_high_pct": -44.96,
+      "drawdown_from_high_pct": -40.12,
       "high_3m": 2580.0,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 1420.0,
-      "latest_date": "2026-11-25",
+      "latest_close": 1545.0,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 1365.0,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 4.03
+      "week_change_pct": 13.19
     },
     "4989": {
-      "drawdown_from_high_pct": -38.14,
+      "drawdown_from_high_pct": -33.26,
       "high_3m": 66.6,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 41.2,
-      "latest_date": "2026-11-25",
+      "latest_close": 44.45,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 40.95,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 0.61
+      "week_change_pct": 8.55
     },
     "6415": {
-      "drawdown_from_high_pct": -42.57,
+      "drawdown_from_high_pct": -39.71,
       "high_3m": 525.0,
       "high_3m_complete": false,
       "high_3m_date": "2026-10-28",
-      "history_days": 22,
+      "history_days": 23,
       "history_start": "2026-10-27",
-      "latest_close": 301.5,
-      "latest_date": "2026-11-25",
+      "latest_close": 316.5,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "market": "TW",
       "prev_week_close": 283.5,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 6.35
+      "week_change_pct": 11.64
     },
     "ARM": {
       "drawdown_from_high_pct": -31.53,
@@ -157,11 +157,11 @@
       "history_start": "2026-10-27",
       "latest_close": 161.51,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 152.2,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 6.12
     },
     "GLD": {
@@ -174,11 +174,11 @@
       "history_start": "2026-11-18",
       "latest_close": 327.45,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 322.87,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 1.42
     },
     "MRVL": {
@@ -190,11 +190,11 @@
       "history_start": "2026-10-27",
       "latest_close": 130.93,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 122.28,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 7.07
     },
     "MU": {
@@ -206,11 +206,11 @@
       "history_start": "2026-10-27",
       "latest_close": 601.25,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 594.51,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 1.13
     },
     "NOK": {
@@ -222,11 +222,11 @@
       "history_start": "2026-10-27",
       "latest_close": 7.3,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 6.88,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 6.1
     },
     "NVDA": {
@@ -238,11 +238,11 @@
       "history_start": "2026-10-27",
       "latest_close": 149.3,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 125.53,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 18.94
     },
     "QQQ": {
@@ -254,11 +254,11 @@
       "history_start": "2026-10-27",
       "latest_close": 633.93,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 608.45,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 4.19
     },
     "SMH": {
@@ -271,11 +271,11 @@
       "history_start": "2026-11-18",
       "latest_close": 422.46,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 400.06,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 5.6
     },
     "SPCX": {
@@ -287,11 +287,11 @@
       "history_start": "2026-10-27",
       "latest_close": 127.44,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 127.79,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": -0.27
     },
     "SPY": {
@@ -303,11 +303,11 @@
       "history_start": "2026-10-27",
       "latest_close": 716.7,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 689.81,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 3.9
     },
     "TLT": {
@@ -320,11 +320,11 @@
       "history_start": "2026-11-18",
       "latest_close": 82.24,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 81.45,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 0.97
     },
     "TSM": {
@@ -336,11 +336,11 @@
       "history_start": "2026-10-27",
       "latest_close": 342.34,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 318.71,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 7.41
     },
     "XLE": {
@@ -353,11 +353,11 @@
       "history_start": "2026-11-18",
       "latest_close": 60.9,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 60.51,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 0.64
     },
     "XLF": {
@@ -370,11 +370,11 @@
       "history_start": "2026-11-18",
       "latest_close": 56.51,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 54.57,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 3.56
     },
     "XLK": {
@@ -387,11 +387,11 @@
       "history_start": "2026-11-18",
       "latest_close": 155.79,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 149.01,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 4.55
     },
     "XLP": {
@@ -404,11 +404,11 @@
       "history_start": "2026-11-18",
       "latest_close": 92.3,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 90.46,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 2.03
     },
     "XLU": {
@@ -421,11 +421,11 @@
       "history_start": "2026-11-18",
       "latest_close": 43.61,
       "latest_date": "2026-11-25",
-      "latest_is_expected": true,
+      "latest_is_expected": false,
       "market": "US",
       "prev_week_close": 42.69,
       "prev_week_date": "2026-11-20",
-      "status": "ok",
+      "status": "incomplete",
       "week_change_pct": 2.16
     }
   },
@@ -451,42 +451,49 @@
           "foreign": -1236.55,
           "total": -814.53,
           "trust": 550.35
+        },
+        "2026-11-26": {
+          "dealer": 128.65,
+          "foreign": -491.81,
+          "total": -151.03,
+          "trust": 212.13
         }
       },
       "week_total_100m": {
-        "dealer": -1128.59,
-        "foreign": -2029.93,
-        "total": -2552.09,
-        "trust": 606.43
+        "dealer": -999.94,
+        "foreign": -2521.74,
+        "total": -2703.12,
+        "trust": 818.56
       }
     },
     "note": "加權指數與成交金額來自證交所 FMTQIK；三大法人來自 BFI82U，單位億元（正＝買超）。",
     "taiex": {
-      "drawdown_from_high_pct": -23.34,
+      "drawdown_from_high_pct": -21.42,
       "high_3m": 49822.55,
       "high_3m_complete": true,
       "high_3m_date": "2026-10-06",
       "history_days": 63,
-      "history_start": "2026-08-24",
-      "latest_close": 38195.43,
-      "latest_date": "2026-11-25",
+      "history_start": "2026-08-25",
+      "latest_close": 39151.81,
+      "latest_date": "2026-11-26",
       "latest_is_expected": true,
       "prev_week_close": 36033.29,
       "prev_week_date": "2026-11-20",
       "status": "ok",
-      "week_change_pct": 6.0
+      "week_change_pct": 8.65
     },
     "trade_value": {
-      "avg_change_pct": -4.98,
+      "avg_change_pct": -7.04,
       "prev_week_avg_100m": 9738.9,
       "prev_week_total_100m": 48694.6,
-      "this_week_avg_100m": 9253.6,
+      "this_week_avg_100m": 9053.5,
       "this_week_days": [
         "2026-11-23",
         "2026-11-24",
-        "2026-11-25"
+        "2026-11-25",
+        "2026-11-26"
       ],
-      "this_week_total_100m": 27760.7
+      "this_week_total_100m": 36214.0
     }
   }
 }

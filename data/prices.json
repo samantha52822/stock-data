@@ -1,97 +1,97 @@
 {
-  "all_ok": true,
+  "all_ok": false,
   "errors": [],
-  "expected_tw_close_date": "2026-11-25",
-  "expected_us_close_date": "2026-11-25",
-  "generated_at_taipei": "2026-11-26 12:54:42",
+  "expected_tw_close_date": "2026-11-26",
+  "expected_us_close_date": "2026-11-26",
+  "generated_at_taipei": "2026-11-27 06:43:57",
   "items": {
     "0050": {
-      "change": -5.4,
-      "close": 90.3,
-      "data_date": "2026-11-25",
+      "change": 2.55,
+      "close": 92.85,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "元大台灣50",
-      "prev_close": 95.7,
+      "prev_close": 90.3,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
     "00631L": {
-      "change": -3.22,
-      "close": 23.78,
-      "data_date": "2026-11-25",
+      "change": 1.72,
+      "close": 25.5,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "元大台灣50正2",
-      "prev_close": 27.0,
+      "prev_close": 23.78,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
     "00981A": {
-      "change": -1.51,
-      "close": 20.53,
-      "data_date": "2026-11-25",
+      "change": 1.36,
+      "close": 21.89,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "主動統一台股增長",
-      "prev_close": 22.04,
+      "prev_close": 20.53,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
     "1815": {
-      "change": -11.0,
-      "close": 101.5,
-      "data_date": "2026-11-25",
+      "change": 6.0,
+      "close": 107.5,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "富喬",
-      "prev_close": 112.5,
+      "prev_close": 101.5,
       "source": "TPEx daily_close_quotes",
       "status": "ok"
     },
     "2330": {
-      "change": -80.0,
-      "close": 2150.0,
-      "data_date": "2026-11-25",
+      "change": -5.0,
+      "close": 2145.0,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "台積電",
-      "prev_close": 2230.0,
+      "prev_close": 2150.0,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
     "2441": {
-      "change": -10.2,
-      "close": 92.3,
-      "data_date": "2026-11-25",
+      "change": 6.6,
+      "close": 98.9,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "超豐",
-      "prev_close": 102.5,
+      "prev_close": 92.3,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
     "3081": {
-      "change": -105.0,
-      "close": 1420.0,
-      "data_date": "2026-11-25",
+      "change": 125.0,
+      "close": 1545.0,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "聯亞",
-      "prev_close": 1525.0,
+      "prev_close": 1420.0,
       "source": "TPEx daily_close_quotes",
       "status": "ok"
     },
     "4989": {
-      "change": -3.9,
-      "close": 41.2,
-      "data_date": "2026-11-25",
+      "change": 3.25,
+      "close": 44.45,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "榮科",
-      "prev_close": 45.1,
+      "prev_close": 41.2,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
     "6415": {
-      "change": -24.0,
-      "close": 301.5,
-      "data_date": "2026-11-25",
+      "change": 15.0,
+      "close": 316.5,
+      "data_date": "2026-11-26",
       "market": "TW",
       "name": "矽力*-KY",
-      "prev_close": 325.5,
+      "prev_close": 301.5,
       "source": "TWSE OpenAPI STOCK_DAY_ALL",
       "status": "ok"
     },
@@ -104,7 +104,7 @@
       "prev_close": 161.56,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "GLD": {
       "change": 2.0,
@@ -115,7 +115,7 @@
       "prev_close": 325.45,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "MRVL": {
       "change": -0.64,
@@ -126,7 +126,7 @@
       "prev_close": 131.57,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "MU": {
       "change": -28.54,
@@ -137,7 +137,7 @@
       "prev_close": 629.79,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "NOK": {
       "change": -0.03,
@@ -148,7 +148,7 @@
       "prev_close": 7.33,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "NVDA": {
       "change": -6.08,
@@ -159,7 +159,7 @@
       "prev_close": 155.38,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "QQQ": {
       "change": -4.17,
@@ -170,7 +170,7 @@
       "prev_close": 638.1,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "SMH": {
       "change": -4.29,
@@ -181,7 +181,7 @@
       "prev_close": 426.75,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "SPCX": {
       "change": 1.63,
@@ -192,7 +192,7 @@
       "prev_close": 125.81,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "SPY": {
       "change": -2.08,
@@ -203,7 +203,7 @@
       "prev_close": 718.78,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "TLT": {
       "change": 0.75,
@@ -214,7 +214,7 @@
       "prev_close": 81.49,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "TSM": {
       "change": -6.86,
@@ -225,7 +225,7 @@
       "prev_close": 349.2,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "XLE": {
       "change": 0.45,
@@ -236,7 +236,7 @@
       "prev_close": 60.45,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "XLF": {
       "change": 0.4,
@@ -247,7 +247,7 @@
       "prev_close": 56.11,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "XLK": {
       "change": -1.3,
@@ -258,7 +258,7 @@
       "prev_close": 157.09,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "XLP": {
       "change": 0.42,
@@ -269,7 +269,7 @@
       "prev_close": 91.88,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     },
     "XLU": {
       "change": 0.21,
@@ -280,9 +280,27 @@
       "prev_close": 43.4,
       "quote_time_ny": "2026-11-25 16:00:00",
       "source": "Finnhub quote",
-      "status": "ok"
+      "status": "stale"
     }
   },
-  "not_ok_symbols": [],
+  "not_ok_symbols": [
+    "ARM",
+    "GLD",
+    "MRVL",
+    "MU",
+    "NOK",
+    "NVDA",
+    "QQQ",
+    "SMH",
+    "SPCX",
+    "SPY",
+    "TLT",
+    "TSM",
+    "XLE",
+    "XLF",
+    "XLK",
+    "XLP",
+    "XLU"
+  ],
   "note": "status=ok 才可當收盤價使用；其他狀態一律視為缺漏。未判斷國定假日，休市日會顯示 stale。"
 }
